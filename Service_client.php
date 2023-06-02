@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Miao&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+     <!-- Lien popups -->
+     <link rel="stylesheet" href="path/to/magnific-popup.css">
+    <script src="path/to/jquery.min.js"></script>
+    <script src="path/to/jquery.magnific-popup.min.js"></script>
+    
+    <link rel="stylesheet" href="Css/Service.css">
+
+    <title>Service_client</title>
+</head>
+<body>
+    <section class="section_3" style="background-color: #3b3d3b;">
+    <header>
+              <div class="logo">
+                  <h1>Teyou<span>Shop</span></h1>
+              </div>
+              <div class="humberger">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                  <div class="line"></div>
+              </div>
+
+              <nav class="nav-bar">
+                  <ul>
+                      <li><a href="index.php" class="active">Acceuil</a></li>
+                      <li><a href="About.php">About</a></li>
+                      <li><a href="Boutique.php">Boutique</a></li>
+                      <li><a href="Service_client.php">Service client</a></li>
+                  </ul>
+              </nav>
+
+    </header>
+    </section>
+     
+    <section class="client">
+        <div class="client1">
+        <h1>SERVICE CLIENT</h1>
+        <P>Our team of experts is committed to delivering exceptional customer service and support
+           From the moment you reach out to us, we'll work with you to identify your needs and
+           develop a customized solution that meets your goals. We'll be there every step of the 
+           way to ensure that your experience with us is seamless and stress-free</P>
+        </div>
+        <div class="line2"></div>
+        
+        <div class="client_contact">
+            <div class="client_info">
+            <div class="paragraphe">
+            <p>Vous avez des questions?</p>
+            <p> Nous sommes là pour vous répondre !</p>
+            </div>
+            <h3>Appelez-nous au</h3>
+            <p>01 23 45 67 89</p>
+            <p>ou envoyez-nous un e-mail sur</p>
+            <p>Teyou@monsite.fr</p>
+            </div>
+             
+            <div class="client_formumlaire">
+                <form action="" method="post">
+                    <input type="text" name="Nom" placeholder="Nom">
+                    <input type="text" name="Email" placeholder="Email">
+                    <input type="text" name="Object" placeholder="Object">
+                    <textarea id="my-textarea" name="my-textarea" rows="8" cols="50" placeholder="Message" style="resize: none; padding: 10px"></textarea>
+                    <input type="submit" value="Envoyer">
+                </form>
+            </div>
+        </div>
+        <div class="line3"></div>
+        
+        <h1 style="text-align: center;">FAQ</h1>
+        <div class="client_recommandation">
+            <div class="recommandation_left">
+                 <div class="suivre_commande">
+                    <h1>Comment suivre ma commande ?</h1>
+                    <p>Une fois que le client a trouvé le produit qu'il souhaite acheter, 
+                        il l'ajoute à son panier. Il peut également modifier la quantité 
+                        ou supprimer le produit du panier si nécessaire.</p>
+                 </div>
+
+                 <div class="suivre_commande">
+                    <h1>Quelle est la politique de retour ?</h1>
+                    <p>Les politiques de retour spécifient souvent une période pendant laquelle
+                         les clients peuvent retourner un produit, généralement entre 7 et 30 jours après la réception du produit</p>
+                 </div>
+            </div>
+
+            <div class="recommandation_right">
+                <div class="livraison">
+                    <h1>Comment fonctionne les livraisons ?</h1>
+                    <p> Le site web expédie le produit au client, en utilisant le mode de livraison choisi par le client lors de l'achat. 
+                        Le client peut également suivre l'état de la livraison en utilisant un numéro de suivi fourni par le site web.</p>
+                </div>
+
+                <div class="livraison">
+                    <h1>Comment retourner un article ?</h1>
+                    <p> Si votre article est éligible pour un retour, contactez le service client du site web ou du vendeur pour informer votre demande de retour. 
+                        Vous pouvez généralement contacter le service client par téléphone, email, ou via un formulaire de contact en ligne.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer_1">
+
+             <div class="footer_left">
+                <p>RESTEZ CONNECTEE</p>
+                 <div class="footer_logo">
+                    <a href=""><i class="bi bi-whatsapp"></i></a>
+                    <a href=""><i class="bi bi-instagram"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                 </div>
+             </div>
+
+             <div class="footer_center">
+                <h1>Adresse</h1>
+                 <p>Carradeux rue Anbroise</p>
+                 <p>Croix des bouquet</p>
+             </div>
+             <div class="footer_right">
+                <h1>Baision d'aide??</h1>
+                <p>+509 3437 6724</p>
+                <p>Teyou@gmail.com</p>
+             </div>
+        </div>
+
+        <div class="footer_2">
+            <div class="footer_2_title">
+            <a href=""><p>Mention legale</p></a>
+            <a href=""><p>Politique de confidentialite</p></a>
+            <a href=""><p>Polotique de cookies</p></a>
+            </div>
+            <p>© 2035 par Abduelson Lyvert. Créé avec Wix.com</p>
+        </div>
+    </footer> 
+<script>
+        humberger=document.querySelector(".humberger");
+        humberger.onclick= function(){
+          navbar=document.querySelector(".nav-bar");
+          navbar.classList.toggle("active");
+        }
+    </script> 
+</body>
+</html>
