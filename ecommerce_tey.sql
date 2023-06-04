@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : ven. 02 juin 2023 à 04:24
--- Version du serveur : 10.4.27-MariaDB
--- Version de PHP : 8.0.25
+-- Host: 127.0.0.1
+-- Generation Time: Jun 05, 2023 at 01:43 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,36 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `ecommerce_tey`
+-- Database: `ecommerce_tey`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `produits`
+-- Table structure for table `cart_items`
+--
+
+CREATE TABLE `cart_items` (
+  `id` int(11) NOT NULL,
+  `idProduit` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `quantite` int(11) NOT NULL,
+  `date` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart_items`
+--
+
+INSERT INTO `cart_items` (`id`, `idProduit`, `user_id`, `quantite`, `date`) VALUES
+(1, 5, 10, 4, '2023-06-04'),
+(2, 9, 10, 3, '2023-06-04'),
+(3, 7, 10, 3, '2023-06-04');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `produits`
 --
 
 CREATE TABLE `produits` (
@@ -35,10 +58,10 @@ CREATE TABLE `produits` (
   `Quantite` int(11) NOT NULL,
   `Date` datetime NOT NULL,
   `Image` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `produits`
+-- Dumping data for table `produits`
 --
 
 INSERT INTO `produits` (`Id_prod`, `Nom`, `Prix`, `Description`, `Quantite`, `Date`, `Image`) VALUES
@@ -54,7 +77,7 @@ INSERT INTO `produits` (`Id_prod`, `Nom`, `Prix`, `Description`, `Quantite`, `Da
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Table structure for table `utilisateurs`
 --
 
 CREATE TABLE `utilisateurs` (
@@ -62,10 +85,10 @@ CREATE TABLE `utilisateurs` (
   `Nom` varchar(255) NOT NULL,
   `Email` varchar(300) NOT NULL,
   `Mode_passe` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Dumping data for table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`Id_user`, `Nom`, `Email`, `Mode_passe`) VALUES
@@ -75,36 +98,61 @@ INSERT INTO `utilisateurs` (`Id_user`, `Nom`, `Email`, `Mode_passe`) VALUES
 (14, 'Abduelson Lyvert', 'abdueljhon@gmail.com', '123456');
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `produits`
+-- Indexes for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `idProduit` (`idProduit`),
+  ADD KEY `user_id` (`user_id`);
+
+--
+-- Indexes for table `produits`
 --
 ALTER TABLE `produits`
   ADD PRIMARY KEY (`Id_prod`);
 
 --
--- Index pour la table `utilisateurs`
+-- Indexes for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`Id_user`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `produits`
+-- AUTO_INCREMENT for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `produits`
 --
 ALTER TABLE `produits`
   MODIFY `Id_prod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
--- AUTO_INCREMENT pour la table `utilisateurs`
+-- AUTO_INCREMENT for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   MODIFY `Id_user` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `cart_items`
+--
+ALTER TABLE `cart_items`
+  ADD CONSTRAINT `cart_items_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `utilisateurs` (`Id_user`),
+  ADD CONSTRAINT `cart_items_ibfk_2` FOREIGN KEY (`idProduit`) REFERENCES `produits` (`Id_prod`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -1,14 +1,16 @@
 <?php
+require("configuration/commande.php");
 session_start();
 if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
 {
     $initiale_nom = $_SESSION['initiale_nom'];
     $intial_user= $_SESSION['user'];
     $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($initiale_nom) . "&background=random";
+    $cartNumber = countItems($_SESSION['user']);
 }
 
-require("configuration/commande.php");
 $produits= Afficher_4();
+
 ?>
 
 <!DOCTYPE html>
@@ -23,9 +25,13 @@ $produits= Afficher_4();
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
      <!-- Lien popups -->
-     <link rel="stylesheet" href="path/to/magnific-popup.css">
-    <script src="path/to/jquery.min.js"></script>
-    <script src="path/to/jquery.magnific-popup.min.js"></script>
+     <!-- <link rel="stylesheet" href="path/to/magnific-popup.css"> -->
+    <!-- <script src="path/to/jquery.min.js"></script> -->
+    <script src="jquery.min.js"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- <script src="path/to/jquery.magnific-popup.min.js"></script> -->
     
     <link rel="stylesheet" href="Css/style.css">
 
@@ -68,10 +74,13 @@ $produits= Afficher_4();
                       }
                        
                       ?>
-                    
+                    <?php if(isset($_SESSION['user'])){   ?>
                     </a></li>
-                      <li><a href="Card.php"><img src="Images/offer.png" alt=""></a></li>
+                      <li><a   href="myCart.php"><img src="Images/offer.png" alt=""></a></li><span style="color: red;"><?php echo $cartNumber  ?></span>
                   </ul>
+
+                  <?php } ?>
+
               </nav>
     </header>
      <div class="Relative">
@@ -166,7 +175,7 @@ $produits= Afficher_4();
         </div>
     </footer> 
 
-    <script>
+    <!-- <script>
             $(document).ready(function() {
         $('.image').magnificPopup({
             type: 'image',
@@ -176,7 +185,7 @@ $produits= Afficher_4();
         });
         });
 
-    </script>
+    </script> -->
 
 <script>
         humberger=document.querySelector(".humberger");
@@ -185,5 +194,100 @@ $produits= Afficher_4();
         navbar.classList.toggle("active");
         }
     </script> 
+
+
+    <!-- Added by Jameson Innocent -->
+<div id="myModal" class="modal">
+        <div class="modal-content">
+          <a href="#" class="close-button" onclick="closePreview()">&times;</a>
+          <iframe id="modal-iframe" name="modal-iframe" style="width:100%;height:100%;border:none;"></iframe>
+        </div>
+      </div>
+      </div>
+
+
+
+      <script>
+        function showPreview() {
+          console.log("My modal");
+          document.getElementById("myModal").style.display = "block";
+          document.getElementById("modal-iframe").src = "myCart.html";
+        }
+
+        function closePreview() {
+          // Hide the modal by calling the hide() method on the modal element
+        //   $('#myModal').modal('hide');
+        document.getElementById("myModal").style.display = "none";
+        }
+      </script>
+
+
+<style>
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    overflow: auto;
+    background-color: #333;
+}
+
+.modal-content {
+    background-color: #333;
+    margin: 1em auto;
+    padding: 1em;
+    border: 1px solid var(--sidebar-color);
+    max-width: 90%;
+    height: 100%;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    animation-name: modalopen;
+    animation-duration: 0.5s;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: red;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--primary-color-light);
+    font-weight: bold;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+@keyframes modalopen {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+/* Responsive  */
+
+@media screen and (min-width: 768px) {
+    .content {
+        flex-direction: row;
+    }
+
+    .modal-content {
+        background-color: var(--sidebar-color);
+        margin: 1em auto;
+        padding: 1em;
+        border: 1px solid var(--sidebar-color);
+        max-width: 50%;
+        height: 100%;
+        position: relative;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        animation-name: modalopen;
+        animation-duration: 0.5s;
+    }
+}
+</style>
+
 </body>
 </html>

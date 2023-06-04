@@ -45,4 +45,43 @@ function filter($Nom){
     }
 }
 
+function countItems($user_id){
+  if(require("connexion_config.php")){
+        $stmt = $acess->prepare("SELECT COUNT(*) AS total FROM cart_items WHERE user_id = :user_id");
+        $stmt->bindParam("user_id",$user_id);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result['total'];
+
+  }
+}
+
+function getCartItems($user_id) {
+  require("connexion_config.php");
+
+  if ($acess) {
+      $stmt = $acess->prepare("SELECT p.* , ci.quantite FROM cart_items ci
+                              JOIN produits p ON ci.idProduit = p.Id_prod
+                              WHERE ci.user_id = :user_id");
+      $stmt->bindParam(":user_id", $user_id);
+      $stmt->execute();
+      $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+      return $result;
+  }
+}
+
+
+function verifyItem($user_id, $ProductId){
+
+  if(require("connexion_config.php")){
+    $stmt = $acess->prepare("SELECT COUNT(*) AS total FROM cart_items WHERE user_id = :user_id AND idProduit = :idProduit");
+    $stmt->bindParam("user_id",$user_id);
+    $stmt->bindParam("idProduit",$ProductId);
+    $stmt->execute();
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $result['total'];
+
+}
+}
+
 ?> 

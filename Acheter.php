@@ -23,11 +23,12 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-     <!-- Lien popups -->
-     <link rel="stylesheet" href="path/to/magnific-popup.css">
-    <script src="path/to/jquery.min.js"></script>
-    <script src="path/to/jquery.magnific-popup.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <link rel="stylesheet" href="Css/Produit.css">
+    <script src="Javascript/card.js"></script>
+    <script src="jquery.min.js"></script>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Produits</title>
 </head>
 <body>
@@ -86,12 +87,12 @@ if (isset($_GET['id'])) {
 
                 <div class="main_botom">
                     <div class="main_controle">
-                        <input type="number" name="nombre" min=0 placeholder="<?php echo $produit['Quantite']?>">
+                        <input type="number" id="qteProd" name="nombre" min=1 value="1" >
                         <button>
                             <a style="color: white; text-decoration: none;" href="#">
                                 <?php if ($intial_user !== null) { ?>
                                     <li style="list-style: none;">
-                                    <button class="bouton" name="produit" value="<?=$produit['Id_prod']?>"  type="submit">Add to card</button>
+                                    <input type="button" class="bouton" value="Add to cart" onclick="addToCart(<?=$produit['Id_prod']?>,<?= $intial_user ?>)" >
                                     </li>
                                 <?php } else { ?>
                                     <li style="list-style: none;"><a href="login.php" style="text-decoration: none; color: white;">login</a></li>
@@ -156,6 +157,6 @@ if (isset($_GET['id'])) {
           navbar.classList.toggle("active");
         }
     </script> 
-    <script src="card.js"></script>
+    <!-- <script src="card.js"></script> -->
 </body>
 </html>
