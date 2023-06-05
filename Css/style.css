@@ -17,6 +17,10 @@
     background-attachment: fixed;
 }
 
+.logo h1{
+    font-size: 30px;
+}
+
 .Relative{
     display: flex;
     justify-content: center;
@@ -75,6 +79,7 @@ header{
     font-size: 28px;
     font-weight: bold;
     color: white;
+    display: flex;
 }
 
 .logo span{
@@ -149,7 +154,7 @@ header{
     }
 
     .nav-bar.active{
-        min-height: 430px;
+        min-height: 400px;
         z-index: 99;
     }
 
@@ -433,8 +438,8 @@ footer .footer_1{
 
 /* About */
  .section_4{
-    background-image: url('../Images/windows-qtpt4WGlz3Y-unsplash.jpg');
-    height: 80vh;
+    background-image: url('../Images/pexels-karolina-grabowska-5632398.jpg');
+    height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;

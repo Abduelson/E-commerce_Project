@@ -1,3 +1,14 @@
+<?php
+require("configuration/commande.php");
+session_start();
+if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
+{
+    $initiale_nom = $_SESSION['initiale_nom'];
+    $intial_user= $_SESSION['user'];
+    $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($initiale_nom) . "&background=random";
+    $cartNumber = countItems($_SESSION['user']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +26,11 @@
     <script src="path/to/jquery.magnific-popup.min.js"></script>
     
     <link rel="stylesheet" href="Css/Service.css">
-
+    <style>
+        .avatar {
+        border-radius: 50%;
+        }
+        </style>
     <title>Service_client</title>
 </head>
 <body>
@@ -33,10 +48,25 @@
               <nav class="nav-bar">
                   <ul>
                       <li><a href="index.php" class="active">Acceuil</a></li>
-                      <li><a href="About.php">About</a></li>
                       <li><a href="Boutique.php">Boutique</a></li>
+                      <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
-                  </ul>
+                      <?php 
+                        if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
+                        echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
+                        }
+                        else{
+                        ?>
+                        <li><a href="login.php">login</a></li>
+                        <?php
+                        }
+                        
+                        ?>
+                        <?php if(isset($_SESSION['user'])){   ?>
+                        </a></li>
+                        <li><a   href="myCart.php"><img src="Images/offer.png" alt=""></a></li><span style="color: red;"><?php echo $cartNumber  ?></span>
+                        </ul>
+                        <?php } ?>
               </nav>
 
     </header>

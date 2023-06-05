@@ -24,14 +24,9 @@ $produits= Afficher_4();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-     <!-- Lien popups -->
-     <!-- <link rel="stylesheet" href="path/to/magnific-popup.css"> -->
-    <!-- <script src="path/to/jquery.min.js"></script> -->
     <script src="jquery.min.js"></script>
     <script src="jquery-3.6.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <!-- <script src="path/to/jquery.magnific-popup.min.js"></script> -->
     
     <link rel="stylesheet" href="Css/style.css">
 

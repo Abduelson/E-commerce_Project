@@ -21,13 +21,18 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 5px 30px;
 }
 
 .logo{
     font-size: 28px;
     font-weight: bold;
     color: white;
+    display: flex;
+}
+
+.logo h1{
+    font-size: 30px;
 }
 
 .logo span{
