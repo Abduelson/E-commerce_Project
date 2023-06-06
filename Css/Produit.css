@@ -369,3 +369,9 @@ footer .footer_1{
         margin-bottom: 20px;
      }
 }
+
+.response{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
