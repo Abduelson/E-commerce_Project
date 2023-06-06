@@ -51,22 +51,31 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                       <li><a href="Boutique.php">Boutique</a></li>
                       <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
-                      <?php 
-                        if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
-                        echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
-                        }
-                        else{
-                        ?>
-                        <li><a href="login.php">login</a></li>
-                        <?php
-                        }
-                        
-                        ?>
-                        <?php if(isset($_SESSION['user'])){   ?>
-                        </a></li>
-                        <li><a   href="myCart.php"><img src="Images/offer.png" alt=""></a></li><span style="color: red;"><?php echo $cartNumber  ?></span>
-                        </ul>
-                        <?php } ?>
+                      <li>
+                            <?php 
+                            if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
+                                echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
+                            }
+                            else{
+                                ?>
+                                <li><a href="login.php">login</a></li>
+                                <?php
+                            }
+                            
+                            ?>
+                            <?php if(isset($_SESSION['user'])){   ?>
+                      </li>
+
+                        <li>
+                            <a href="myCart.php">
+                                <span style="position: absolute; color: red;"><?php echo $cartNumber; ?></span>
+                                <img src="Images/offer.png" alt="">
+                            </a>
+                       </li>
+                  </ul>
+
+                  <?php } ?>
+
               </nav>
 
     </header>
@@ -75,10 +84,10 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <section class="client">
         <div class="client1">
         <h1>SERVICE CLIENT</h1>
-        <P>Our team of experts is committed to delivering exceptional customer service and support
-           From the moment you reach out to us, we'll work with you to identify your needs and
-           develop a customized solution that meets your goals. We'll be there every step of the 
-           way to ensure that your experience with us is seamless and stress-free</P>
+        <P>La satisfaction de nos clients est notre priorité absolue. Nous nous engageons à traiter chaque 
+            demande avec rapidité, efficacité et courtoisie. Si vous rencontrez un problème avec votre commande, 
+            notre équipe fera tout son possible pour le résoudre rapidement et vous assurer une expérience d'achat sans souci. 
+            Votre satisfaction est notre réussite N'hésitez pas à contacter notre service client via notre formulaire de contact, par e-mail ou par téléphone.</P>
         </div>
         <div class="line2"></div>
         
@@ -89,9 +98,9 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
             <p> Nous sommes là pour vous répondre !</p>
             </div>
             <h3>Appelez-nous au</h3>
-            <p>01 23 45 67 89</p>
+            <p>+ 509 3427 6734</p>
             <p>ou envoyez-nous un e-mail sur</p>
-            <p>Teyou@monsite.fr</p>
+            <p>sterlinesagesse@gmail.com</p>
             </div>
              
             <div class="client_formumlaire">
@@ -143,7 +152,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
         <div class="footer_1">
 
              <div class="footer_left">
-                <p>RESTEZ CONNECTEE</p>
+                <p style="color: rgb(28, 26, 26);">RESTEZ CONNECTEE</p>
                  <div class="footer_logo">
                     <a href=""><i class="bi bi-whatsapp"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
@@ -160,7 +169,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
              <div class="footer_right">
                 <h1>Baision d'aide??</h1>
                 <p>+509 3437 6724</p>
-                <p>Teyou@gmail.com</p>
+                <p>sterlinesagesse@gmail.com</p>
              </div>
         </div>
 

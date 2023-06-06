@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Noto Sans Miao', sans-serif;
 }
 
 .livrason{
@@ -20,13 +21,17 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 30px;
+    padding: 5px 30px;
 }
 
 .logo{
     font-size: 28px;
     font-weight: bold;
     color: white;
+}
+
+.logo h1{
+    font-size: 30px;
 }
 
 .logo span{
@@ -202,7 +207,7 @@ main{
     padding-left: 5px;
 }
 
-.main_controle [type="submit"]{
+.main_controle [type="button"]{
     padding: 9px;
     background-color: #646161;
     transition: opacity 0.5s ease-in-out;
@@ -210,8 +215,23 @@ main{
     cursor: pointer;
 }
 
-.main_controle [type="submit"]:hover{
+.main_controle [type="button"]:hover{
     opacity: 0.4;
+}
+
+.liClass{
+    padding: 8px;
+    background-color: #646161;
+    transition: opacity 0.5s ease-in-out;
+    border: none;
+    cursor: pointer;
+    list-style: none;
+}
+
+.liClass a{
+    text-decoration: none; 
+    color: white;
+    text-align: center;
 }
 
 @media screen and (max-width: 900px){
@@ -257,6 +277,7 @@ main{
     }
 }
 
+/* footer */
 footer{
     margin-top: 40px;
     background-color: #3b3d3b;
@@ -267,27 +288,33 @@ footer .footer_1{
     padding: 30px 0;
     display: flex;
     justify-content: space-around;
+    margin: 0 auto;
+    width: 70%;
 }
 
 .footer_left p{
    color: rgb(213, 209, 209);
-   margin-bottom: 30px;
+   margin-bottom: 10px;
    font-size: 15px;
 }
 
 .footer_logo i, .footer_center p, .footer_right p{
-    color: white;
+    color: #7d7d7b;
     padding: 0 8px;
 }
 
 .footer_center h1, .footer_right h1{
-   color: rgb(213, 209, 209);
-   margin-bottom: 30px;
+   color: rgb(51, 49, 49);
+   margin-bottom: 10px;
    font-size: 20px;
 }
 
 .footer_center, .footer_right{
     text-align: center;
+}
+
+.footer_right p, .footer_center p{
+    font-size: 13px;
 }
 
 .footer_2_title{
@@ -302,6 +329,7 @@ footer .footer_1{
     margin: 0 30px;
     color: #7d7d7b;
 }
+
 
 .footer_2 p{
     padding-top: 20px;

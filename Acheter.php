@@ -1,11 +1,12 @@
 <?php
 session_start();
-$initiale_nom=null;
-$intial_user=null;
+require("configuration/commande.php");
 if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
 {
     $initiale_nom = $_SESSION['initiale_nom'];
     $intial_user= $_SESSION['user'];
+    $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($initiale_nom) . "&background=random";
+    $cartNumber = countItems($_SESSION['user']);
 }
 
 // Afficher Produits
@@ -30,6 +31,11 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <script src="jquery-3.6.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Produits</title>
+    <style>
+        .avatar {
+        border-radius: 50%;
+        }
+        </style>
 </head>
 <body>
 <section class="section_3" style="background-color: #3b3d3b;">
@@ -46,10 +52,34 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
               <nav class="nav-bar">
                   <ul>
                       <li><a href="index.php" class="active">Acceuil</a></li>
-                      <li><a href="About.php">About</a></li>
                       <li><a href="Boutique.php">Boutique</a></li>
+                      <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
+                      <li>
+                            <?php 
+                            if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
+                                echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
+                            }
+                            else{
+                                ?>
+                                <li><a href="login.php">login</a></li>
+                                <?php
+                            }
+                            
+                            ?>
+                            <?php if(isset($_SESSION['user'])){   ?>
+                      </li>
+
+                        <li>
+                            <a href="myCart.php">
+                                <span style="position: absolute; color: red;"><?php echo $cartNumber; ?></span>
+                                <img src="Images/offer.png" alt="">
+                            </a>
+                       </li>
                   </ul>
+
+                  <?php } ?>
+
               </nav>
 
     </header>
@@ -57,7 +87,6 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     
       <main>
       <?php
-require("configuration/commande.php");
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
     $produit = Rechercher($id);
@@ -89,13 +118,12 @@ if (isset($_GET['id'])) {
                     <div class="main_controle">
                         <input type="number" id="qteProd" name="nombre" min=1 value="1" >
                         <button>
-                            <a style="color: white; text-decoration: none;" href="#">
                                 <?php if ($intial_user !== null) { ?>
                                     <li style="list-style: none;">
                                     <input type="button" class="bouton" value="Add to cart" onclick="addToCart(<?=$produit['Id_prod']?>,<?= $intial_user ?>)" >
                                     </li>
                                 <?php } else { ?>
-                                    <li style="list-style: none;"><a href="login.php" style="text-decoration: none; color: white;">login</a></li>
+                                    <li class="liClass"><a href="login.php">login</a></li>
                                 <?php } ?>
                             </a>
                         </button>
@@ -115,11 +143,10 @@ if (isset($_GET['id'])) {
       </main>
 
       
-    <footer>
+      <footer>
         <div class="footer_1">
-
              <div class="footer_left">
-                <p>RESTEZ CONNECTEE</p>
+                <p style="color: rgb(28, 26, 26);">RESTEZ CONNECTEE</p>
                  <div class="footer_logo">
                     <a href=""><i class="bi bi-whatsapp"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
@@ -136,7 +163,7 @@ if (isset($_GET['id'])) {
              <div class="footer_right">
                 <h1>Baision d'aide??</h1>
                 <p>+509 3437 6724</p>
-                <p>Teyou@gmail.com</p>
+                <p>sterlinesagesse@gmail.com</p>
              </div>
         </div>
 

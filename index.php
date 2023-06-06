@@ -56,22 +56,27 @@ $produits= Afficher_4();
                       <li><a href="Boutique.php">Boutique</a></li>
                       <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
-                      <li><a href="#" style="color:black;">
+                      <li>
+                            <?php 
+                            if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
+                                echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
+                            }
+                            else{
+                                ?>
+                                <li><a href="login.php">login</a></li>
+                                <?php
+                            }
+                            
+                            ?>
+                            <?php if(isset($_SESSION['user'])){   ?>
+                      </li>
 
-                      <?php 
-                      if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
-                        echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
-                      }
-                      else{
-                        ?>
-                        <li><a href="login.php">login</a></li>
-                        <?php
-                      }
-                       
-                      ?>
-                    <?php if(isset($_SESSION['user'])){   ?>
-                    </a></li>
-                      <li><a   href="myCart.php"><img src="Images/offer.png" alt=""></a></li><span style="color: red;"><?php echo $cartNumber  ?></span>
+                        <li>
+                            <a href="myCart.php">
+                                <span style="position: absolute; color: red;"><?php echo $cartNumber; ?></span>
+                                <img src="Images/offer.png" alt="">
+                            </a>
+                       </li>
                   </ul>
 
                   <?php } ?>
@@ -137,9 +142,8 @@ $produits= Afficher_4();
 
     <footer>
         <div class="footer_1">
-
              <div class="footer_left">
-                <p>RESTEZ CONNECTEE</p>
+                <p style="color: rgb(28, 26, 26);">RESTEZ CONNECTEE</p>
                  <div class="footer_logo">
                     <a href=""><i class="bi bi-whatsapp"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
@@ -156,7 +160,7 @@ $produits= Afficher_4();
              <div class="footer_right">
                 <h1>Baision d'aide??</h1>
                 <p>+509 3437 6724</p>
-                <p>Teyou@gmail.com</p>
+                <p>sterlinesagesse@gmail.com</p>
              </div>
         </div>
 
@@ -169,19 +173,6 @@ $produits= Afficher_4();
             <p>© 2035 par Abduelson Lyvert. Droit reserver</p>
         </div>
     </footer> 
-
-    <!-- <script>
-            $(document).ready(function() {
-        $('.image').magnificPopup({
-            type: 'image',
-            gallery: {
-            enabled: true
-            }
-        });
-        });
-
-    </script> -->
-
 <script>
         humberger=document.querySelector(".humberger");
         humberger.onclick= function(){
