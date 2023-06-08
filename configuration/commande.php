@@ -60,7 +60,7 @@ function getCartItems($user_id) {
   require("connexion_config.php");
 
   if ($acess) {
-      $stmt = $acess->prepare("SELECT p.* , ci.quantite FROM cart_items ci
+      $stmt = $acess->prepare("SELECT p.* ,ci.id, ci.quantite FROM cart_items ci
                               JOIN produits p ON ci.idProduit = p.Id_prod
                               WHERE ci.user_id = :user_id");
       $stmt->bindParam(":user_id", $user_id);
