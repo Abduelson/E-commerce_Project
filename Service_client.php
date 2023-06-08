@@ -20,11 +20,6 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-     <!-- Lien popups -->
-     <link rel="stylesheet" href="path/to/magnific-popup.css">
-    <script src="path/to/jquery.min.js"></script>
-    <script src="path/to/jquery.magnific-popup.min.js"></script>
-    
     <link rel="stylesheet" href="Css/Service.css">
     <style>
         .avatar {
@@ -38,6 +33,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <header>
               <div class="logo">
                   <h1>Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
               </div>
               <div class="humberger">
                   <div class="line"></div>
@@ -104,7 +100,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
             </div>
              
             <div class="client_formumlaire">
-                <form action="" method="post">
+                <form action="email.php" method="post">
                     <input type="text" name="Nom" placeholder="Nom">
                     <input type="text" name="Email" placeholder="Email">
                     <input type="text" name="Object" placeholder="Object">

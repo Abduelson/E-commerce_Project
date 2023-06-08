@@ -48,12 +48,12 @@
     background-color: rgb(20, 20, 20);
     border: none;
     color: white;
-    transition: background-color 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 }
 
 button:hover{
     color: black;
-    background-color: white;
+    opacity: .3;
 }
 
 .livrason{

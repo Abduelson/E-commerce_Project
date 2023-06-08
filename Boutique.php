@@ -40,6 +40,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <header>
               <div class="logo">
                   <h1>Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
               </div>
               <div class="humberger">
                   <div class="line"></div>

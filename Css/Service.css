@@ -183,6 +183,7 @@ header{
     background-color: #4c4c4c;
     color: white;
     border: none;
+    cursor: pointer;
 }
 
 .client .line3{

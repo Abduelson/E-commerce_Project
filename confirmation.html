@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .contenaire_notif{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+        }
+
+        #notification{
+            color: green;
+            width: 40%;
+            height: 20%;
+            box-shadow: 3px 6px 12px rgba(0, 0, 0, -4);
+            transition: all .4;
+            border:1px solid #0ef;
+            display: grid;
+            align-items: center;
+            /* justify-content: center; */
+            text-align: center;
+        }
+
+        #notification a{
+            text-decoration: none;
+        }
+
+        @media only screen and (max-width: 709px) {
+            #notification{
+                width: 80%;
+                height: 20%;
+            }
+            #notification a{
+                padding-bottom: 10px;
+                text-decoration: none;
+            }
+        }
+    </style>
+</head>
+<body>
+     <div class="contenaire_notif">
+        <div id="notification">
+             <h1 style="color: green;"> 🙏 Thanks for your email ✉️</h1><br>
+            <a href="index.php">Back to home</a>
+        </div>
+     </div>
+</body>
+</html>

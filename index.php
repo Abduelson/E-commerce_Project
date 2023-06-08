@@ -43,6 +43,7 @@ $produits= Afficher_4();
     <header>
               <div class="logo">
                   <h1>Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
               </div>
               <div class="humberger">
                   <div class="line"></div>
@@ -88,7 +89,7 @@ $produits= Afficher_4();
         <h1>Bienvenue chez Teyou<span>Shop</span>!<br>
             Jusqu'a <span>80% de reduction</span><br>
             sur nos offres de la semaine</h1>
-        <button style="cursor: pointer;"><a href="Boutique.php"></a>Acheter Maintenant</button>
+        <button style="cursor: pointer;"><a href="Boutique.php" style="color: white; text-decoration: none;">Acheter Maintenant</a></button>
         </div>
      </div>
     </section>
