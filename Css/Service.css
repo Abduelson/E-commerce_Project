@@ -101,15 +101,16 @@ header{
     .nav-bar ul{
         display: block;
         width: fit-content;
-        margin: 30px auto 0 auto;
+        margin: 0px auto 0 auto;
         text-align: center;
         opacity: 0;
         transition: 0.5s;
     }
 
     .nav-bar.active{
-        min-height: 300px;
+        min-height: 420px;
         z-index: 99;
+        margin-top: -25px;
     }
 
     .nav-bar.active ul{
@@ -427,3 +428,43 @@ footer .footer_1{
 .btn:hover{
     opacity: 0.4;
 }
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    padding-left: 25px;
+  }
+  
+  .dropdown-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    /* background-color: #f9f9f9; */
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 5px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  @media screen and (max-width: 800px) {
+      .imjcart{
+        margin-top: 60px;
+      }
+  }

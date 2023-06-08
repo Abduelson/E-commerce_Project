@@ -43,14 +43,23 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
 
               <nav class="nav-bar">
                   <ul>
-                      <li><a href="index.php" class="active">Acceuil</a></li>
+                      <li><a href="" class="active">Acceuil</a></li>
                       <li><a href="Boutique.php">Boutique</a></li>
                       <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
                       <li>
                             <?php 
                             if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
-                                echo "<a href=\"deconexion.php\" ><img src=\"$avatarUrl\" alt=\"$initiale_nom\" class=\"avatar\" style=\"height: 30px; width: 30px;\"></a>";
+                                ?>
+                                <div class="dropdown">
+                                <button class="dropdown-btn">
+                                  <img src="<?php echo $avatarUrl; ?>" alt="<?php echo $initiale_nom; ?>" class="avatar" style="height: 30px; width: 30px;">
+                                </button>
+                                <div class="dropdown-content" style="background-color: black;">
+                                  <a href="deconexion.php" style="color: white;">Déconnexion</a>
+                                </div>
+                              </div>
+                              <?php
                             }
                             else{
                                 ?>
@@ -62,7 +71,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                             <?php if(isset($_SESSION['user'])){   ?>
                       </li>
 
-                        <li>
+                        <li class="imjcart">
                             <a href="myCart.php">
                                 <span style="position: absolute; color: red;"><?php echo $cartNumber; ?></span>
                                 <img src="Images/offer.png" alt="">

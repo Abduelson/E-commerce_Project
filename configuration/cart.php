@@ -25,9 +25,9 @@ function commander($user_id){
 
 
     // Now send the email to the administrators
-    $to = 'jamesoninnocent10@gmail.com';  // Email address of the recipient
+    $to = 'sterlinesagesse@gmail.com';  // Email address of the recipient
     $subject = 'Nouvelle Commande';        // Subject of the email
-    $message = 'Hello TEYOU STORE, Vous avez une nouvelle commande.'. "\r\n"; // Body of the email
+    $message = 'Hello TeyouShop, Vous avez une nouvelle commande.'. "\r\n"; // Body of the email
     $message .= 'Infos sur la commande: ' . "\r\n";
     $total = 0;
     foreach ($cart_array as $product) {
@@ -35,7 +35,7 @@ function commander($user_id){
         $total += $product['quantite'] * $product['Prix'];
     }
     $message .= "Total: $". $total;
-    echo "Merci d'avoir choisi Tayoue Store";
+    echo "Merci d'avoir choisi TeyouShop";
 
     $headers = 'From: sender@example.com' . "\r\n" .
     'Reply-To: sender@example.com' . "\r\n" .
