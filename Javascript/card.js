@@ -116,3 +116,59 @@ function addToCart(idProduit, user_id) {
     }
     
 }
+
+// Function to command the products in the cart, created by Jameson Innocent
+function commander(user_id) {
+    if (user_id == '') {
+        alert("Une erreur s'est produite");
+    }
+    else{
+        $.ajax({
+            url: 'configuration/controller/commandeController.php',
+            type: 'POST',
+            data: {user_id: user_id, function: "commander"},
+            success: function(response) {
+                Swal.fire({
+                    icon: 'success',
+                    title: response,
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    location.reload();
+                });
+        }
+            
+     });
+    }
+}
+
+function deleteItem(itemId){
+    Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to recover this item!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6",
+        confirmButtonText: "Yes, delete it!",
+      }).then((result) => {
+        if (result.isConfirmed) {
+            $.ajax({
+                url: 'configuration/controller/deleteController.php',
+                type: 'POST',
+                data: {itemId: itemId, function: "delete"},
+                success: function(response) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: response,
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        location.reload();
+                    });
+            }
+                
+         });
+        }
+      });
+}

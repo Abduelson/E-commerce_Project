@@ -18,7 +18,10 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
     <link rel="stylesheet" href="Css/Produit.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-</head>
+    <script src="Javascript/card.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </head>
 <body>
     <section class="h-100" style="background-color: #eee;">
         <div class="container h-100 py-5">
@@ -34,7 +37,10 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
                 </div> -->
               </div>
         <?php
+        if(!empty($cartItems)){
+          $total = 0;
           foreach ($cartItems as $product) {  
+            $total += $product['quantite'] * $product['Prix'];
         ?>
               <div class="card rounded-3 mb-4">
                 <div class="card-body p-4">
@@ -54,7 +60,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
                         <i class="fas fa-minus"></i>
                       </button>
       
-                      <input id="form1" min="0" name="quantity" value="<?= $product['quantite'] ?>" type="number"
+                      <input id="form1" min="0" name="quantity" disabled value="<?= $product['quantite'] ?>" type="number"
                         class="form-control form-control-sm" />
       
                       <button class="btn btn-link px-2"
@@ -67,7 +73,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
-                      <button type="button" class="btn btn-danger">Delete</button>
+                      <button onclick="deleteItem(<?= $product['id'] ?>)" type="button" class="btn btn-danger">Delete</button>
                     </div>
 
                     <!-- <div class="card"> -->
@@ -81,26 +87,32 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
       
             <?php } ?>
 
-                <!-- error message -->
-                <?php 
+              <div class="card">
+                <div class="card-body">
+                  <h3>Total : <span>$ <?= $total ?></span></h3>
+                </div>
+
+                <div class="card-body">
+                  <button type="button" onclick="commander('<?= $_SESSION['user'] ?>')" class="btn btn-warning btn-block btn-lg">Commander</button>
+                </div>
+              </div>
+              <?php } ?>
+              <!-- error message -->
+              <?php 
                  if(empty($cartItems)){
                 ?>
                 <div class="response">
                     <img src="Images/error-regular-24 (1).png" alt="" width="50px" height="50px">
-                    <h1>Vous n'avez pas encore des donnees </h1>
+                    <h1>Vous n'avez pas encore de produits dans votre cart! </h1>
                 </div>
                 <?php
                 }
                 ?>
-              <div class="card">
-                <div class="card-body">
-                  <button type="button" class="btn btn-warning btn-block btn-lg">Pay</button>
-                </div>
-              </div>
       
             </div>
           </div>
         </div>
       </section>
+
 </body>
 </html>
