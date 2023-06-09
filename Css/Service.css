@@ -70,6 +70,13 @@ header{
 }
 
 
+.log{
+    border: 1px solid black;
+    text-align: center;
+    margin-left: 30px;
+    padding: 5px 25px 5px 0px;
+}
+
 @media only screen and (max-width: 812px) {
       .humberger{
         display: block;
@@ -120,7 +127,7 @@ header{
     .nav-bar ul li a{
         margin-bottom: 12px;
         font-size: 20px;
-        padding-top: 20px;
+        padding-top: 15px;
     }
 }
 

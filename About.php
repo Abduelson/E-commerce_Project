@@ -55,15 +55,15 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                                 <button class="dropdown-btn">
                                   <img src="<?php echo $avatarUrl; ?>" alt="<?php echo $initiale_nom; ?>" class="avatar" style="height: 30px; width: 30px;">
                                 </button>
-                                <div class="dropdown-content">
-                                  <a href="deconexion.php">Déconnexion</a>
+                                <div class="dropdown-content" style="background-color: black;">
+                                  <a href="deconexion.php" style="color: white;">Déconnexion</a>
                                 </div>
                               </div>
                               <?php
                             }
                             else{
                                 ?>
-                                <li><a href="login.php">login</a></li>
+                                <li class="log"><a href="login.php">login</a></li>
                                 <?php
                             }
                             

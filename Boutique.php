@@ -70,7 +70,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                             }
                             else{
                                 ?>
-                                <li><a href="login.php">login</a></li>
+                                <li class="log"><a href="login.php">login</a></li>
                                 <?php
                             }
                             

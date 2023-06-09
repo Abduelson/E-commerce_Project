@@ -42,6 +42,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
     <header>
               <div class="logo">
                   <h1>Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
               </div>
               <div class="humberger">
                   <div class="line"></div>
@@ -51,7 +52,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
 
               <nav class="nav-bar">
                   <ul>
-                      <li><a href="" class="active">Acceuil</a></li>
+                      <li><a href="index.php" class="active">Acceuil</a></li>
                       <li><a href="Boutique.php">Boutique</a></li>
                       <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
@@ -63,15 +64,15 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                                 <button class="dropdown-btn">
                                   <img src="<?php echo $avatarUrl; ?>" alt="<?php echo $initiale_nom; ?>" class="avatar" style="height: 30px; width: 30px;">
                                 </button>
-                                <div class="dropdown-content">
-                                  <a href="deconexion.php">Déconnexion</a>
+                                <div class="dropdown-content" style="background-color: black;">
+                                  <a href="deconexion.php" style="color: white;">Déconnexion</a>
                                 </div>
                               </div>
                               <?php
                             }
                             else{
                                 ?>
-                                <li><a href="login.php">login</a></li>
+                                <li class="log"><a href="login.php">login</a></li>
                                 <?php
                             }
                             

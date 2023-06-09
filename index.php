@@ -53,7 +53,7 @@ $produits= Afficher_4();
 
               <nav class="nav-bar">
                   <ul>
-                      <li><a href="" class="active">Acceuil</a></li>
+                      <li><a href="index.php" class="active">Acceuil</a></li>
                       <li><a href="Boutique.php">Boutique</a></li>
                       <li><a href="About.php">About</a></li>
                       <li><a href="Service_client.php">Service client</a></li>
@@ -73,7 +73,7 @@ $produits= Afficher_4();
                             }
                             else{
                                 ?>
-                                <li><a href="login.php">login</a></li>
+                                <li class="log"><a href="login.php">login</a></li>
                                 <?php
                             }
                             
