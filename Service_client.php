@@ -1,11 +1,12 @@
 <?php
 require("configuration/commande.php");
 session_start();
-if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
+if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && isset($_SESSION['user']))
 {
     $initiale_nom = $_SESSION['initiale_nom'];
+    $initiale_prenom= $_SESSION['initiale_prenom'];
     $intial_user= $_SESSION['user'];
-    $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($initiale_nom) . "&background=random";
+    $avatarUrl = "https://ui-avatars.com/api/?name=" . urlencode($initiale_nom . ' ' . $initiale_prenom) . "&background=random";
     $cartNumber = countItems($_SESSION['user']);
 }
 ?>
@@ -53,7 +54,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                                 ?>
                                 <div class="dropdown">
                                 <button class="dropdown-btn">
-                                  <img src="<?php echo $avatarUrl; ?>" alt="<?php echo $initiale_nom; ?>" class="avatar" style="height: 30px; width: 30px;">
+                                <img src="<?php echo $avatarUrl; ?>" alt="<?php echo $initiale_nom . ' ' . $initiale_prenom; ?>" class="avatar" style="height: 30px; width: 30px;">
                                 </button>
                                 <div class="dropdown-content" style="background-color: black;">
                                   <a href="deconexion.php" style="color: white;">Déconnexion</a>
@@ -155,9 +156,34 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
 
     <footer>
         <div class="footer_1">
+             <div class="footer_center">
+                <h1>Company</h1>
+                <div class="trace"></div>
+                 <p>About us</p>
+                 <p>Our services</p>
+                 <p>Privacy policy</p>
+                 <p>Affilate program</p>
+             </div>
 
-             <div class="footer_left">
-                <p style="color: rgb(28, 26, 26);">RESTEZ CONNECTEE</p>
+             <div class="footer_center">
+                <h1>Get help</h1>
+                <div class="trace"></div>
+                <p>FAQ</p>
+                <p>shipping</p>
+                <p>Returns</p>
+                <p>Order status</p>
+             </div>
+
+             <div class="footer_center">
+                <h1>Online shop</h1>
+                <div class="trace"></div>
+                <p>Groceries</p>
+                <p>Electronic</p>
+                <p>Dress</p>
+                <p>Smartphone</p>
+             </div>
+             <div class="footer_center">
+                <h1>Suivez-nous</h1>
                  <div class="footer_logo">
                     <a href=""><i class="bi bi-whatsapp"></i></a>
                     <a href=""><i class="bi bi-instagram"></i></a>
@@ -165,26 +191,10 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user']))
                     <a href=""><i class="bi bi-twitter"></i></a>
                  </div>
              </div>
-
-             <div class="footer_center">
-                <h1>Adresse</h1>
-                 <p>Carradeux rue Anbroise</p>
-                 <p>Croix des bouquet</p>
-             </div>
-             <div class="footer_right">
-                <h1>Baision d'aide??</h1>
-                <p>+509 3437 6724</p>
-                <p>sterlinesagesse@gmail.com</p>
-             </div>
         </div>
 
         <div class="footer_2">
-            <div class="footer_2_title">
-            <a href=""><p>Mention legale</p></a>
-            <a href=""><p>Politique de confidentialite</p></a>
-            <a href=""><p>Polotique de cookies</p></a>
-            </div>
-            <p>© 2035 par Abduelson Lyvert. Créé avec Wix.com</p>
+            <p>© 2035 par Abduelson Lyvert. Droit reserver</p>
         </div>
     </footer> 
 <script>

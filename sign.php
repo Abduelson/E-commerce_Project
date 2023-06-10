@@ -1,11 +1,12 @@
 <?php
 if(isset($_POST['valider']))
 {
-    if(isset($_POST['nom']) && isset($_POST['email']) && isset($_POST['password']))
+    if(isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['email']) && isset($_POST['password']))
     {
-        if(!empty($_POST['nom']) && !empty($_POST['email']) && !empty($_POST['password']))
+        if(!empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['email']) && !empty($_POST['password']))
         {
             $nom = $_POST['nom'];
+            $prenom=$_POST['prenom'];
             $email = $_POST['email'];
             $mode_pass = $_POST['password'];
             $erreur="";
@@ -33,8 +34,8 @@ if(isset($_POST['valider']))
                 else
                 {
                     // Insertion de l'utilisateur
-                    $req = mysqli_prepare($con, "INSERT INTO utilisateurs(Nom, Email, Mode_passe) VALUES (?, ?, ?)");
-                    mysqli_stmt_bind_param($req, "sss", $nom, $email, $mode_pass);
+                    $req = mysqli_prepare($con, "INSERT INTO utilisateurs(Nom, Prenom, Email, Mode_passe) VALUES (?, ?, ?,?)");
+                    mysqli_stmt_bind_param($req, "ssss", $nom, $prenom, $email, $mode_pass);
                     mysqli_stmt_execute($req);
 
                     if(mysqli_stmt_affected_rows($req) > 0)
@@ -77,6 +78,7 @@ if(isset($_POST['valider']))
                 <form action="" method="post">
                 <h1>SIGN UP</h1>
                     <input type="text" name="nom" id="nom" placeholder="Nom">
+                    <input type="text" name="prenom" id="prenom" placeholder="Prenom">
                     <input type="email" name="email" id="email" placeholder="Email">
                     <input type="password" name="password" id="password" placeholder="Password" >
                     <button type="submit" name="valider">Valider</button>

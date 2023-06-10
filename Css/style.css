@@ -305,7 +305,7 @@ header{
 
   .card
 {
-    width: 80%;
+    /* width: 80%; */
     background-color: white;
     box-shadow: 0px 5px 20px #999;
 }
@@ -349,98 +349,94 @@ header{
 
 footer{
     margin-top: 40px;
-    background-color: #3b3d3b;
+    background-color: #3f4140;
     min-height: 300px;
+    padding: 70px 0;
 }
 
-footer .footer_1{
-    padding: 30px 0;
+.footer_1{
     display: flex;
-    justify-content: space-around;
-    margin: 0 auto;
-    width: 70%;
-}
-
-.footer_left p{
-   color: rgb(213, 209, 209);
-   margin-bottom: 10px;
-   font-size: 15px;
-}
-
-.footer_logo i, .footer_center p, .footer_right p{
-    color: #7d7d7b;
-    padding: 0 8px;
-}
-
-.footer_center h1, .footer_right h1{
-   color: rgb(51, 49, 49);
-   margin-bottom: 10px;
-   font-size: 20px;
-}
-
-.footer_center, .footer_right{
-    text-align: center;
-}
-
-.footer_right p, .footer_center p{
-    font-size: 13px;
-}
-
-.footer_2_title{
-    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
     justify-content: center;
-    align-items: center;
-    padding-top: 30px;
+    max-width: 1170px;
+    margin: auto;
 }
 
-.footer_2_title a{
-    text-decoration: none;
-    margin: 0 30px;
-    color: #7d7d7b;
+.footer_center{
+    width: 25%;
+    padding: 0 25px;
+    /* border: 1px solid red; */
+    margin: 0 auto;
 }
 
-.footer_2 p{
-    padding-top: 20px;
+.footer_center h1{
+    font-size: 18px;
+    color: white;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+ }
+
+ .footer_center h1::before{
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #ffc500;
+    height: 1px;
+    width: 50px;
+ }
+
+ .footer_center p{
+    font-size: 16px;
+    color: #bbbbbb;
+    transition: all .3s ease;
+ }
+
+ .footer_center p:hover{
+    color: #fff;
+    padding-left: 6px;
+ }
+
+ .footer_center .footer_logo a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255,.2);
+    margin: 0 10px 10px 0px;
     text-align: center;
-    color: #7d7d7b;
-}
+    line-height: 40px;
+    border-radius: 50%;
+    color: #fff;
+    transition: all .5s ease;
+ }
 
-@media screen and (max-width: 528px){
-    footer .footer_1{
-       display: flex;
-       flex-direction: column;
+ .footer_center .footer_logo a:hover{
+    color: #24262b;
+    background-color: #fff;
+ }
+
+ .footer_2{
+    margin-top: 30px;
+    color: #fff;
+    text-align: center;
+ }
+
+ @media screen and (max-width: 629px){
+    .footer_1{
+        display: flex;
+        flex-direction: column;
     }
 
-    .footer_left{
-        text-align: center;
+    .footer_center{
+        width: 80%;
+        padding: 10px 25px;
+        /* border: 1px solid red; */
+        margin: 0 auto;
     }
+ }
 
-    .footer_left p{
-        color: rgb(213, 209, 209);
-        margin-bottom: 15px;
-        font-size: 15px;
-     }
-
-     .footer_logo{
-        margin-bottom: 25px;
-     }
-
-     .footer_center h1, .footer_right h1{
-        margin: 10px;
-     }
-
-     .footer_2{
-        padding-bottom: 20px;
-     }
-
-     .footer_center{
-        margin-bottom: 20px;
-     }
-
-   form input{
-        border-radius: 20px;
-    }
-}
 
 /* Boutique */
 .recher input{
@@ -523,6 +519,14 @@ footer .footer_1{
     text-align: center;
     padding: 30px;
     width: 280px;
+    margin: 0 10px;
+    border-radius: 10px;
+}
+
+.About_card_2{
+    text-align: center;
+    padding: 30px;
+    width: 100%;
     margin: 0 10px;
     border-radius: 10px;
 }

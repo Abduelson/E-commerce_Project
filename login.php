@@ -16,17 +16,19 @@
           $database_name= "Ecommerce_Tey";
           $con= mysqli_connect($nom_serveur, $user, $pass_word, $database_name);
           
-          $req= mysqli_query($con, "SELECT SUBSTR(Nom, 1, 1) AS initiale_nom, Id_user FROM utilisateurs WHERE Email='$email' AND Mode_passe='$mode_pass'");
+          $req= mysqli_query($con, "SELECT SUBSTR(Nom, 1, 1) AS initiale_nom,SUBSTR(Prenom, 1, 1) AS initiale_prenom,Id_user FROM utilisateurs WHERE Email='$email' AND Mode_passe='$mode_pass'");
           $numbre_ligne=mysqli_num_rows($req);
       
           if($numbre_ligne>0){
             // Récupérer la première lettre du nom d'utilisateur à partir de la requête
             $result = mysqli_fetch_assoc($req);
             $initiale_nom = $result['initiale_nom'];
+            $initiale_prenom=$result['initiale_prenom'];
             $user=$result['Id_user'];
 
             // Stocker la première lettre du nom d'utilisateur dans une variable de session
             $_SESSION['initiale_nom'] = $initiale_nom;
+            $_SESSION['initiale_prenom']=$initiale_prenom;
             $_SESSION['user'] = $user;
             header("Location: index.php");
           }
