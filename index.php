@@ -104,7 +104,7 @@ $produits= Afficher_4();
      </div>
     </section>
      <div class="livrason">
-         <h1>LIVRAISON Payant</h1>
+         <h1>LIVRAISON PAYANT</h1>
     </div>
 
     <section>
