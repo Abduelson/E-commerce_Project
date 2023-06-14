@@ -29,7 +29,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
             <div class="col-10">
       
               <div class="d-flex justify-content-between align-items-center mb-4">
-                <a href="index.php" class="btn btn-warning">Retour</a>
+                <a href="Boutique.php" class="btn btn-warning">Retour</a>
                 <h3 class="fw-normal mb-0 text-black">Shopping Cart</h3>
                 <!-- <div>
                   <p class="mb-0"><span class="text-muted">Sort by:</span> <a href="#!" class="text-body">price <i
@@ -52,7 +52,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
                       <p class="lead fw-normal mb-2"> <?= $product['Nom'] ?> </p>
-                      <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p>
+                      <!-- <p><span class="text-muted">Size: </span>M <span class="text-muted">Color: </span>Grey</p> -->
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <button class="btn btn-link px-2"
@@ -69,7 +69,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['user'])){
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h5 class="mb-0">$<?= $product['quantite'] * $product['Prix'] ?></h5>
+                      <h5 class="mb-0 price">$<?= $product['quantite'] * $product['Prix'] ?></h5>
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>

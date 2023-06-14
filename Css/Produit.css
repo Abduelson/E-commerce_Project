@@ -419,6 +419,10 @@ footer{
       .imjcart{
         margin-top: 60px;
       }
+
+      .price{
+        padding-top: 20px;
+      }
   }
   .logo{
     display: flex;
