@@ -27,7 +27,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && is
      <link rel="stylesheet" href="path/to/magnific-popup.css">
     <script src="path/to/jquery.min.js"></script>
     <script src="path/to/jquery.magnific-popup.min.js"></script>
-    
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="Css/style.css">
     <title>Boutique</title>
     <style>
@@ -40,8 +40,8 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && is
     <section class="section_3" style="background-color: #3b3d3b;">
     <header>
               <div class="logo">
-                  <h1>Teyou<span>Shop</span></h1>
-                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
+                  <a href="index.php" style="display: flex; text-decoration: none;"><h1 style="color: black;">Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px"></a>
               </div>
               <div class="humberger">
                   <div class="line"></div>
