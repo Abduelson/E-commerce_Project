@@ -6,6 +6,6 @@
     <title>Commande</title>
 </head>
 <body>
-    
+    <h1>This is the command page</h1>
 </body>
 </html>

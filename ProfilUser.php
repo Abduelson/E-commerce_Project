@@ -6,6 +6,6 @@
     <title>Profil</title>
 </head>
 <body>
-    
+    <h1>This is the profil user page</h1>
 </body>
 </html>

@@ -117,6 +117,11 @@ a{
 
 a:hover{
     background-color: #091227;
+    color: #fff;
+}
+
+.tab:hover i {
+    color: #fff !important;
 }
 
 
@@ -137,3 +142,28 @@ li{
     grid-area: main;
 }
 
+
+aside nav .tabs .tab.is-active a {
+    font-family: 'Poppins',sans-serif;
+    opacity: 1;
+    font-weight: 600;
+}
+
+aside nav .tabs .tab.is-active, li[data-switcher] {
+    color: #fff;
+}
+
+.pages {
+    width: 80vw;
+    margin: 2em;
+    min-height: 100vh;
+    background-color: red;
+}
+
+.pages .page {
+    display: none;
+}
+
+.pages .page.is-active {
+    display: block;
+}
