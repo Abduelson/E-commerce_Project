@@ -17,34 +17,34 @@ $produits= Afficher_4();
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Miao&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <script src="jquery.min.js"></script>
-    <script src="jquery-3.6.4.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    
-    <link rel="stylesheet" href="Css/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Miao&display=swap" rel="stylesheet">
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+            <script src="jquery.min.js"></script>
+            <script src="jquery-3.6.4.min.js"></script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+            <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+            <link rel="stylesheet" href="Css/style.css">
 
-    <title>Acceuil</title>
-    
-        <style>
-        .avatar {
-        border-radius: 50%;
-        }
-        </style>
+            <title>Acceuil</title>
+            
+                <style>
+                .avatar {
+                border-radius: 50%;
+                }
+                </style>
 </head>
 <body>
     <section class="section_2">
     <header>
               <div class="logo">
-                  <h1>Teyou<span>Shop</span></h1>
-                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
+                  <a href="index.php" style="display: flex; text-decoration: none;"><h1 style="color: black;">Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px"></a>
               </div>
               <div class="humberger">
                   <div class="line"></div>

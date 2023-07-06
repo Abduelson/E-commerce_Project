@@ -22,6 +22,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && is
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="Css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <style>
         .avatar {
         border-radius: 50%;
@@ -32,9 +33,9 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && is
 <body>
     <section class="section_4">
     <header>
-              <div class="logo">
-                  <h1>Teyou<span>Shop</span></h1>
-                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px">
+               <div class="logo">
+                  <a href="index.php" style="display: flex; text-decoration: none;"><h1 style="color: black;">Teyou<span>Shop</span></h1>
+                  <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="40px"></a>
               </div>
               <div class="humberger">
                   <div class="line"></div>
@@ -109,7 +110,7 @@ if(isset($_SESSION['initiale_nom']) && isset($_SESSION['initiale_prenom']) && is
     <div class="About_flex">
         <div class="Our_team">
             <h1 style="margin-bottom: 10px;">Notre Equipe</h1>
-            <p>Grâce à la présence de Clara et de Julien à ses côtés, Sterline bénéficie d'un soutien 
+            <p>Grâce à la présence de Lyvert et de Robert à ses côtés, Sterline bénéficie d'un soutien 
                 solide et d'une expertise complémentaire pour mener à bien son entreprise. Ils forment une équipe dynamique, 
                 s'entraident mutuellement et travaillent ensemble pour surmonter les défis et saisir les opportunités qui se présentent. 
                 La combinaison de leurs compétences, de leur dévouement et de
