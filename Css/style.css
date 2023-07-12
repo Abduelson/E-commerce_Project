@@ -1,10 +1,10 @@
 *{
     box-sizing: border-box;
+    margin: 0;
+   padding: 0;
 }
 
 body {
-   margin: 0;
-   padding: 0;
    font-family:'Noto Sans Miao', sans-serif ;
 }
 
@@ -106,8 +106,7 @@ header{
 .log{
     border: 2px solid black;
     border-radius: 5px;
-    /* margin-left: 30px; */
-    padding: .25em .75em;
+    padding: .25em 20px .25em 0px;
 }
 
 .nav-bar ul a{
@@ -198,6 +197,9 @@ header{
         height: 89vh;
     }
     
+    .log{
+        margin-left: 28px;
+    }
 }
 
 

@@ -24,18 +24,13 @@
   <div class="container">
     <!-- Header -->
     <header class="header">
-      <div class="search_i">
-        <input type="search" name="search" id="search">
-        <i class='bx bx-search'></i>
-      </div>
-
       <div class="date">
         <input type="datetime-local" name="" id="">
       </div>
 
       <div class="profile">
-        <i class='bx bx-bell'></i>
-        <i class='bx bx-envelope'></i>
+        <h4 class="h4">Hello, Teyou</h4>
+        <img src="Images/avatar-testimonial.jpg" alt="">
       </div>
     </header>
 
@@ -46,7 +41,7 @@
         <ul class="tabs">
           <li class="logo">
             <h1>Teyou<span>Shop</span></h1>
-            <img src="Images/shopping-bag-regular-24.png" alt="" width="30px" height="35px">
+            <img src="Images/shopping-bag-solid-24.png" alt="" width="30px" height="35px">
           </li>
 
           <li class="tab is-active">
@@ -55,7 +50,7 @@
             </a>
           </li>
 
-          <li>
+          <li class="tabli">
             <a href="index.php"><i class='bx bxs bx-shopping-bag'>
               </i> <span class="nav-item">TeyouShop</span>
             </a>
@@ -75,7 +70,7 @@
 
           <li class="tab">
             <a data-switcher data-tab="5"><i class='bx bxs bx-user'>
-              </i> <span class="nav-item">Profil user</span>
+              </i> <span class="nav-item">Profil Admin</span>
             </a>
           </li>
 
